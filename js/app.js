@@ -1,0 +1,1 @@
+let name = document.querySelector('#game_name');
