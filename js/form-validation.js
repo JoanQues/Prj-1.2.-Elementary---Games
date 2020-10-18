@@ -1,8 +1,6 @@
 // Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-  'use strict'
-
-  window.addEventListener('load', function () {
+(function() {
+  window.addEventListener('load', function  () {
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation')
 
@@ -18,3 +16,38 @@
     })
   }, false)
 }())
+
+export default function validateForm() {
+  const elements = document.querySelectorAll('#frm-game input');
+  document.querySelector('#error').innerHTML = "";
+
+  for(let i of elements){
+    if((i.type === "text" || i.type === "date" || i.type === "number") && i.value === "" || !i.value){
+      document.querySelector('#error').innerHTML = "Camps buids";
+      return false;
+    }
+  }
+
+  let pegi = Number.parseInt(document.querySelector('#game_pegi').value);
+  if(Number.isInteger(pegi)){
+    switch(pegi) {
+      case 3:
+        break;
+      case 7:
+        break;
+      case 12:
+        break;
+      case 16:
+        break;
+      case 18:
+        break;
+      default: 
+        document.querySelector('#error').innerHTML = "Edad pegi 3, 7, 12, 16, 18";
+        return false;
+    }
+  } else {
+    document.querySelector('#error').innerHTML = "Edad pegi ha de ser un nombre";
+    return false;
+  }
+  return true;
+}

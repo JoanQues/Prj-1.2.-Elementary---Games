@@ -12,7 +12,9 @@
     integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <!-- Custom styles for this template -->
   <link type="text/css" rel="stylesheet" href="css/form-validation.css">
+  <link type="text/css" rel="stylesheet" href="./css/style.css">
   <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
   <style media="screen">
     /* Make the image fully responsive */
     .carousel-inner img {
@@ -30,7 +32,7 @@
   <div class="container">
     <!-- Header Section -->
     <header class="py-5 text-center">
-      <h1 class="py-2">GestoGames</h1>
+      <h1 class="py-2">JoanGames</h1>
       <!-- Carrusel -->
       <div id="carouselGestoGames" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -53,12 +55,6 @@
         <a class="carousel-control-next" href="#carouselGestoGames" data-slide="next"><span
             class="carousel-control-next-icon"></span></a>
       </div>
-
-      <!-- Menú de navegació -->
-      <nav class="nav nav-tabs my-3">
-        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu1" aria-controls="nav-game"
-            aria-selected="true">Gestió de jocs</a></li>
-      </nav>
     </header>
 
     <!-- Tab panes -->
@@ -70,7 +66,7 @@
           <form id="frm-game" name="frm-game" action="javascript:addGame()" method="post" class="needs-validation" novalidate >
         -->
         <form id="frm-game" name="frm-game" action="" method="post">
-          <input type="hidden" id="game_id" name="id" value="" />
+          <input type="hidden" id="game_id" name="id" value="0" />
           <h2>Fitxa del joc</h2>
           <!-- Primera fila de camps del GRID-->
           <div class="row">
@@ -108,9 +104,9 @@
 
             <div class="form-group col-md-6" role="tabpanel" aria-labelledby="nav-tournament-tab">
               <label for="game_genre">Gènere</label>
-              <select class="form-control" id="game_gnre" name="game_genre">
-                <option value="action">Acció</option>
-                <option value="adventure">Aventura</option>
+              <select class="form-control" id="game_genre" name="game_genre">
+                <option value="Action">Acció</option>
+                <option value="Adventure">Aventura</option>
               </select>
             </div>
           </div>
@@ -119,9 +115,10 @@
           <!-- Botons -->
           <div class="text-right">
             <!--<button id="b_addGame" class="button btn-primary btn-lg" type="submit">Nou joc</button>-->
-            <button id="btn-addGame" class="button btn-primary btn-lg" type="button">
-              <i class="far fa-edit"></i> Nou joc
+            <button id="btn-addGame" class="button btn-alert btn-lg" type="button">
+              <i class="fas fa-arrow-circle-down"></i> Nou joc
             </button>
+            <p style="color: red;" id="error"></p>
           </div>
         </form>
       </div>
@@ -135,7 +132,7 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Nom</th>
+            <th id="sort-name" scope="col">Nom<i class="fa fa-fw fa-sort"></i></th>
             <th scope="col">Desenvolupador</th>
             <th scope="col">Llançament</th>
             <th scope="col">PEGI</th>
@@ -147,7 +144,7 @@
     </div>
 
     <!-- Footer info -->
-    <footer class="py-5 text-center">&copy;YoungPro 2019 - prototipus -</footer>
+    <footer class="py-5 text-center">&copy;Joan Ques 2020 - Beta release -</footer>
   </div>
 
 

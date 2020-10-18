@@ -1,5 +1,6 @@
 class Game{
-    constructor(gname,gdate,gpegi,gdeveloper,gcategory){
+    constructor(gcode,gname,gdate,gpegi,gdeveloper,gcategory){
+        this.id = gcode;
         this.name = gname;
         this.date = gdate;
         this.pegi = gpegi;
